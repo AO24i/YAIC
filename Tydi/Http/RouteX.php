@@ -26,7 +26,6 @@ class RouteX
 
 
 
-
 	// ◈ === expired »
 	public static function expired($route = 'login', $param = ['status' => 'session-expired'], $absolute = false)
 	{
