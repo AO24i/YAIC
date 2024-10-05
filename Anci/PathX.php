@@ -2,13 +2,11 @@
 
 namespace App\Yaic\Anci;
 
-
 class PathX
 {
 	// ◈ property
 	public static $DS;
 	public static $init;
-
 
 
 
@@ -31,13 +29,11 @@ class PathX
 
 
 
-
 	// ◈ === base »
 	public static function base(string $path = '')
 	{
 		return base_path($path);
 	}
-
 
 
 
@@ -73,13 +69,11 @@ class PathX
 
 
 
-
 	// ◈ === resource »
 	public static function resource(string $path = '')
 	{
 		return resource_path($path);
 	}
-
 
 
 
@@ -92,12 +86,15 @@ class PathX
 
 
 	// ◈ === route »
-	public static function route()
+	public static function route(string $path = '')
 	{
 		self::init();
-		return self::base() . self::$DS . 'routes' . self::$DS;
+		$directory = self::base() . self::$DS . 'routes' . self::$DS;
+		if (!empty($path)) {
+			$directory .= $path . self::$DS;
+		}
+		return $directory;
 	}
-
 
 
 
@@ -111,5 +108,16 @@ class PathX
 		return $path;
 	}
 
+
+
+	// ◈ === debug »
+	public static function debug(string $path = null)
+	{
+		self::init();
+		if ($path === 'route') {
+			$path = self::route() . 'debug' . self::$DS;
+		}
+		return $path;
+	}
 
 }//> end of class ~ PathX
