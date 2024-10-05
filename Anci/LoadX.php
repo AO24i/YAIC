@@ -14,7 +14,6 @@ class LoadX
 
 
 
-
 	// ◈ === files »
 	public static function files(array $files, bool $check = false)
 	{
@@ -24,7 +23,6 @@ class LoadX
 			}
 		}
 	}
-
 
 
 
@@ -39,7 +37,6 @@ class LoadX
 
 
 
-
 	// ◈ === router »
 	public static function router(string $path)
 	{
@@ -49,11 +46,14 @@ class LoadX
 				$path . 'api.php',
 				$path . 'app.php',
 				$path . 'site.php',
-				$path . 'debug.php'
 			];
 			return self::files($files, false);
 		}
-	}
 
+		if ($path === 'debug') {
+			$path = PathX::debug('route');
+			return self::directory($path, false, 'php');
+		}
+	}
 
 }//> end of class ~ LoadX
