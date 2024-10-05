@@ -9,7 +9,6 @@ class BladeX
 
 
 
-
 	// ◈ === method »
 	public static function method($var)
 	{
