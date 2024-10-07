@@ -1,6 +1,5 @@
-<?php //*** DataX ~ class » Yaic™ Library for Laravel © 2024 ∞ AO™ • @osawereao • www.osawere.com ∞ Apache License ***//
-
-namespace App\Yaic\Spry\Data;
+<?php //*** DataX » Tydi™ Framework © 2024 ∞ AO™ • @osawereao • www.osawere.com ∞ Apache License ***//
+namespace App\Spry;
 
 use Illuminate\Support\Facades\Auth;
 use App\Yaic\Spry\RandomX;
@@ -8,20 +7,9 @@ use App\Yaic\Spry\Number\NumberX;
 
 class DataX
 {
-	// ◈ property
-	public static $yaic;
 
-
-
-
-	// ◈ === method »
-	public static function method($var) {}
-
-
-
-
-	// ◈ === create » make data ready for insert → array
-	public static function create(array $param = [])
+	// • ==== create → make data ready for insert » array
+	public static function create(array $input = null)
 	{
 		// TODO: make input safe for insert
 		if (!isset($input['oauthor'])) {
@@ -35,15 +23,14 @@ class DataX
 		$input['suid'] = $input['suid'] ?? RandomX::suid(40);
 		$input['tuid'] = $input['tuid'] ?? RandomX::tuid(70);
 		$input['oauthor'] = $input['oauthor'] ?? null;
-		$input = ArrayX::stripByKey($input, '_token');
-		$input = ArrayX::stripNullKey($input);
+		$input = ArrayX::stripKey($input, '_token');
+		$input = ArrayX::stripEmptyKey($input);
 		return $input;
 	}
 
 
 
-
-	// ◈ === generateSN » generate sequential serial number → string
+	// • ==== generateSN → generate sequential serial number » string
 	public static function generateSN($lastSN = null, $prefix = null)
 	{
 		if (!$prefix) {
@@ -59,7 +46,6 @@ class DataX
 
 		return $prefix . str_pad((int) $lastSN + 1, 4, '0', STR_PAD_LEFT);
 	}
-
 
 
 
@@ -79,8 +65,6 @@ class DataX
 
 
 
-
-
 	public static function toNaira($number)
 	{
 		//TODO: pre-check!
@@ -92,8 +76,6 @@ class DataX
 
 
 
-
-
 	public static function toDollar($number)
 	{
 		//TODO: pre-check!
@@ -102,8 +84,6 @@ class DataX
 			return '$' . $money;
 		}
 	}
-
-
 
 
 
@@ -123,4 +103,5 @@ class DataX
 		}
 		return $array;
 	}
-}//> end of class ~ DataX
+
+} //> end of DataX

@@ -1,17 +1,10 @@
-<?php //*** JsonX » Tydi™ Framework © 2024 ∞ AO™ • @osawereao • www.osawere.com ∞ Apache License ***//
-namespace App\Spry;
+<?php //*** JsonX ~ class » Yaic™ Library for Laravel © 2024 ∞ AO™ • @osawereao • www.osawere.com ∞ Apache License ***//
+
+namespace App\Yaic\Tydi\Data;
 
 class JsonX
 {
-
-	// • property
-	public static $tydi;
-
-
-
-
-
-	// • ==== is → ... »
+	// ◈ === is »
 	public static function is($input)
 	{
 		if (!empty($input)) {
@@ -26,8 +19,7 @@ class JsonX
 
 
 
-
-	// • ==== handler → ... »
+	// ◈ === handler »
 	public static function handler($data, array $report, $input)
 	{
 		// TODO: Improve on this
@@ -41,9 +33,7 @@ class JsonX
 
 
 
-
-
-	// • ==== encode → ... »
+	// ◈ === encode »
 	public static function encode($input, $flag = 0)
 	{
 		if (!empty($input)) {
@@ -56,9 +46,7 @@ class JsonX
 
 
 
-
-
-	// • ==== decode → ... »
+	// ◈ === decode »
 	public static function decode($input, $flow = 'OBJECT')
 	{
 		if (!empty($input)) {
@@ -84,9 +72,7 @@ class JsonX
 
 
 
-
-
-	// • ==== pretty → ... »
+	// ◈ === pretty »
 	public static function pretty($input = '')
 	{
 		return self::encode($input, JSON_PRETTY_PRINT);
@@ -94,9 +80,7 @@ class JsonX
 
 
 
-
-
-	// • ==== display → ... »
+	// ◈ === display »
 	public static function display($json)
 	{
 		if (!empty($json)) {
@@ -108,9 +92,7 @@ class JsonX
 
 
 
-
-
-	// • ==== toArray → ... »
+	// ◈ === toArray »
 	public static function toArray($input)
 	{
 		if (self::is($input)) {
@@ -121,9 +103,7 @@ class JsonX
 
 
 
-
-
-	// • ==== toObj → ... »
+	// ◈ === toObj »
 	public static function toObj($input)
 	{
 		if (self::is($input)) {
@@ -132,4 +112,4 @@ class JsonX
 		return false;
 	}
 
-}//> end of JsonX
+}//> end of class ~ JsonX

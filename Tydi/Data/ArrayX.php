@@ -1,6 +1,6 @@
 <?php //*** ArrayX ~ class » Yaic™ Library for Laravel © 2024 ∞ AO™ • @osawereao • www.osawere.com ∞ Apache License ***//
 
-namespace App\Yaic\Spry\Data;
+namespace App\Yaic\Tydi\Data;
 
 use App\Yaic\Orig\Is;
 use Illuminate\Support\Arr;
@@ -15,14 +15,11 @@ class ArrayX
 
 
 
-
 	// ◈ === isNot » not an array? → boolean
 	public static function isNot($var)
 	{
 		return !self::is($var);
 	}
-
-
 
 
 
@@ -34,15 +31,11 @@ class ArrayX
 
 
 
-
-
 	// • === isMultiOne → is multi-dimensional with one record »
 	public static function isMultiOne($array)
 	{
 		return is_array($array) && count($array) === 1 && is_array(reset($array));
 	}
-
-
 
 
 
@@ -60,15 +53,11 @@ class ArrayX
 
 
 
-
-
 	// • === isKey → key in array? » boolean
 	public static function isKey($array, $key)
 	{
 		return (!self::empty($array) && array_key_exists($key, $array));
 	}
-
-
 
 
 
@@ -88,8 +77,6 @@ class ArrayX
 
 
 
-
-
 	// • === isKeyEmpty → property of array, empty? » boolean
 	public static function isKeyEmpty($array, $key)
 	{
@@ -101,15 +88,11 @@ class ArrayX
 
 
 
-
-
 	// • === isKeyNotEmpty → property of array, not-empty? » boolean
 	public static function isKeyNotEmpty($array, $key)
 	{
 		return (self::isKey($array, $key) && !empty($array[$key]));
 	}
-
-
 
 
 
@@ -134,8 +117,6 @@ class ArrayX
 
 
 
-
-
 	// • === reKeysNumeric → re-index numeric » array
 	public static function reKeysNumeric($array)
 	{
@@ -151,8 +132,6 @@ class ArrayX
 		}
 		return false;
 	}
-
-
 
 
 
@@ -172,8 +151,6 @@ class ArrayX
 
 
 
-
-
 	// • === toLowerKeys → ... »
 	public static function toLowerKeys($array)
 	{
@@ -190,8 +167,6 @@ class ArrayX
 
 
 
-
-
 	// • === keys → array keys » boolean or array [numerically indexed]
 	public static function keys($array)
 	{
@@ -200,8 +175,6 @@ class ArrayX
 		}
 		return false;
 	}
-
-
 
 
 
@@ -216,8 +189,6 @@ class ArrayX
 
 
 
-
-
 	// • === lastKey → ... »
 	public static function lastKey($array)
 	{
@@ -226,8 +197,6 @@ class ArrayX
 		}
 		return false;
 	}
-
-
 
 
 
@@ -245,7 +214,6 @@ class ArrayX
 		}
 		return false;
 	}
-
 
 
 
@@ -271,7 +239,6 @@ class ArrayX
 
 
 
-
 	// • === stripNullKey → remove key with no value from array »
 	public static function stripNullKey($array)
 	{
@@ -284,7 +251,6 @@ class ArrayX
 		}
 		return $array;
 	}
-
 
 
 
@@ -307,8 +273,6 @@ class ArrayX
 
 
 
-
-
 	// • === stripNullKey → remove key with no value from array »
 	public static function stripEmptyKey($array)
 	{
@@ -324,15 +288,11 @@ class ArrayX
 
 
 
-
-
 	// • === keyByValue → find key by value »
 	public static function keyByValue($array, $value, $strict = false)
 	{
 		return array_search($value, $array, $strict);
 	}
-
-
 
 
 
@@ -352,8 +312,6 @@ class ArrayX
 
 
 
-
-
 	// • === flip → flip keys to values & reverse key order »
 	public static function flip($array, $flag = 'flip')
 	{
@@ -369,8 +327,6 @@ class ArrayX
 
 
 
-
-
 	// • === swapKey → exchange a key in an array » array
 	public static function swapKey($array, $key, $rekey)
 	{
@@ -380,8 +336,6 @@ class ArrayX
 		}
 		return $array;
 	}
-
-
 
 
 
@@ -400,8 +354,6 @@ class ArrayX
 
 
 
-
-
 	// • === suffix → ... » array
 	public static function suffixKey($array, $suffix)
 	{
@@ -417,8 +369,6 @@ class ArrayX
 
 
 
-
-
 	// • === jumble → randomize index or value »
 	public static function jumble($array)
 	{
@@ -428,8 +378,6 @@ class ArrayX
 		}
 		return false;
 	}
-
-
 
 
 
@@ -454,8 +402,6 @@ class ArrayX
 		}
 		return false;
 	}
-
-
 
 
 
@@ -504,8 +450,6 @@ class ArrayX
 
 
 
-
-
 	// • === hasKeyValue → ... »
 	public static function hasKeyValue($array, $key, $value)
 	{
@@ -522,8 +466,6 @@ class ArrayX
 
 
 
-
-
 	// • === isValue → $value in array? » boolean
 	public static function isValue($array, $value)
 	{
@@ -532,8 +474,6 @@ class ArrayX
 		}
 		return false;
 	}
-
-
 
 
 
@@ -548,8 +488,6 @@ class ArrayX
 
 
 
-
-
 	// • === values → array values » boolean, numerically indexed
 	public static function values($array)
 	{
@@ -558,8 +496,6 @@ class ArrayX
 		}
 		return false;
 	}
-
-
 
 
 
@@ -574,8 +510,6 @@ class ArrayX
 
 
 
-
-
 	// • === lastValue → ... »
 	public static function lastValue($array)
 	{
@@ -584,8 +518,6 @@ class ArrayX
 		}
 		return false;
 	}
-
-
 
 
 
@@ -606,16 +538,12 @@ class ArrayX
 
 
 
-
-
 	// • === add → ... » array
 	public static function add(&$array, $key, $value)
 	{
 		$array = Arr::add($array, $key, $value);
 		return $array;
 	}
-
-
 
 
 
@@ -628,8 +556,6 @@ class ArrayX
 		array_push($array, $value);
 		return $array;
 	}
-
-
 
 
 
@@ -657,8 +583,6 @@ class ArrayX
 
 
 
-
-
 	// • === stripValue → remove from array [by value] »
 	public static function stripValue($array, $filter)
 	{
@@ -681,8 +605,6 @@ class ArrayX
 
 
 
-
-
 	// • === uniqueValue → prevent duplicate values »
 	public static function uniqueValue($array)
 	{
@@ -698,8 +620,6 @@ class ArrayX
 
 
 
-
-
 	// • === increment → count & increment » array
 	public static function increment(&$array)
 	{
@@ -708,8 +628,6 @@ class ArrayX
 		$array[] = $increment;
 		return $array;
 	}
-
-
 
 
 
@@ -722,8 +640,6 @@ class ArrayX
 		}
 		return $array;
 	}
-
-
 
 
 
@@ -751,8 +667,6 @@ class ArrayX
 
 
 
-
-
 	// • === toJSON → array to json »
 	public static function toJSON($array, $depth = false)
 	{
@@ -768,8 +682,6 @@ class ArrayX
 
 
 
-
-
 	// • === toObject → array to object »
 	public static function toObject($input, $multi = true)
 	{
@@ -780,8 +692,6 @@ class ArrayX
 		}
 		return false;
 	}
-
-
 
 
 
@@ -878,8 +788,6 @@ class ArrayX
 
 
 
-
-
 	// • === isMultiAndKeyNumeric → ... »
 	public static function isMultiAndKeyNumeric($var)
 	{
@@ -891,8 +799,6 @@ class ArrayX
 
 
 
-
-
 	// • === isNotKeyOrEmpty → ... »
 	public static function isNotKeyOrEmpty($array, $key)
 	{
@@ -901,8 +807,6 @@ class ArrayX
 		}
 		return false;
 	}
-
-
 
 
 
@@ -930,8 +834,6 @@ class ArrayX
 
 
 
-
-
 	// • === exclude → ... » []
 	public static function exclude($array, $exclude, $reindex = false)
 	{
@@ -943,8 +845,6 @@ class ArrayX
 		}
 		return $array;
 	}
-
-
 
 
 

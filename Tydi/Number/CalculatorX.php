@@ -2,6 +2,8 @@
 
 namespace App\Yaic\Tydi\Number;
 
+use App\Yaic\Tydi\Number\NumberX;
+
 class CalculatorX
 {
 	// ◈ === quantityAmount → ... »

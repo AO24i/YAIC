@@ -1,6 +1,6 @@
 <?php //*** ObjectX ~ class » Yaic™ Library for Laravel © 2024 ∞ AO™ • @osawereao • www.osawere.com ∞ Apache License ***//
 
-namespace App\Yaic\Spry\Data;
+namespace App\Yaic\Tydi\Data;
 
 use App\Yaic\Orig\Can;
 
@@ -14,13 +14,11 @@ class ObjectX
 
 
 
-
 	// ◈ === is » is object & empty → boolean
 	public static function empty(&$var)
 	{
 		return is_object($var) && empty(get_object_vars($var));
 	}
-
 
 
 
@@ -40,4 +38,5 @@ class ObjectX
 		}
 		return false;
 	}
+
 }//> end of class ~ ObjectX

@@ -18,8 +18,6 @@ class InputX
 
 
 
-
-
 	// ◇ === titleOptions :: ... »
 	public static function titleOptions()
 	{
@@ -36,8 +34,6 @@ class InputX
 
 
 
-
-
 	// ◇ === currencyOptions :: ... »
 	public static function currencyOptions()
 	{
@@ -48,8 +44,6 @@ class InputX
 			'EUR' => 'Euro (€)'
 		];
 	}
-
-
 
 
 
@@ -81,8 +75,6 @@ class InputX
 
 
 
-
-
 	// ◇ === extractParam :: ... »
 	public static function extractParam(array &$param, string $field, array &$input = [], $swapKey = null)
 	{
@@ -98,8 +90,6 @@ class InputX
 		}
 		return $input;
 	}
-
-
 
 
 
@@ -120,8 +110,6 @@ class InputX
 
 
 
-
-
 	// • ==== jsonToArray • ... » boolean
 	public static function jsonToArray($json, $keyPrefix = null)
 	{
@@ -131,8 +119,6 @@ class InputX
 		}
 		return $array;
 	}
-
-
 
 
 
@@ -147,8 +133,6 @@ class InputX
 
 
 
-
-
 	// • ==== isPuid • ... » boolean
 	public static function isPuid($input)
 	{
@@ -160,8 +144,6 @@ class InputX
 
 
 
-
-
 	// • ==== toTel • ... » boolean
 	public static function toTel($number)
 	{
@@ -170,8 +152,6 @@ class InputX
 		}
 		return StringX::noSpace($number);
 	}
-
-
 
 
 
@@ -195,8 +175,6 @@ class InputX
 		}
 		return $quantityIs . ' ' . $unitIs;
 	}
-
-
 
 
 
