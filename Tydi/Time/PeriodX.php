@@ -13,7 +13,7 @@ class PeriodX
 
 
 
-	// ◈ === parse → ... » []
+	// ◈ === parse »
 	public static function parse($time = null, $exception = false, $timezone = null)
 	{
 		try {
@@ -33,7 +33,7 @@ class PeriodX
 
 
 
-	// ◈ === carbon → ... » [carbon::object | boolean]
+	// ◈ === carbon » [carbon::object | boolean]
 	public static function carbon($time, $exception = true)
 	{
 		return self::parse($time, $exception);
@@ -41,7 +41,7 @@ class PeriodX
 
 
 
-	// ◈ === is → ... » [carbon::object | boolean]
+	// ◈ === is » [carbon::object | boolean]
 	public static function is($time, bool $asCarbon = false)
 	{
 		if (!$asCarbon) {
@@ -52,7 +52,7 @@ class PeriodX
 
 
 
-	// ◈ === isCarbon → ... » [boolean]
+	// ◈ === isCarbon » [boolean]
 	public static function isCarbon($var)
 	{
 		if ($var instanceof Carbon) {
@@ -65,7 +65,7 @@ class PeriodX
 
 
 
-	// ◈ === startOfDay → resets time to 00:00:00 » [carbon::object | boolean::false]
+	// ◈ === startOfDay » resets time to 00:00:00 → [carbon::object | boolean::false]
 	public static function startOfDay($time = 'today')
 	{
 		$carbon = self::carbon($time, false);
@@ -77,7 +77,7 @@ class PeriodX
 
 
 
-	// ◈ === stringTo → ... »
+	// ◈ === stringTo »
 	public static function stringTo($string, $format = null)
 	{
 		$format = $format ?? self::$format;
@@ -91,7 +91,7 @@ class PeriodX
 
 
 
-	// ◈ === difference → ... »
+	// ◈ === difference »
 	public static function difference($time, $reference = 'now')
 	{
 		$time = self::carbon($time, false);
@@ -117,7 +117,7 @@ class PeriodX
 
 
 
-	// ◈ === toString → ... »
+	// ◈ === toString »
 	public static function toString($time, $reference = 'now', $in = null)
 	{
 		$difference = self::difference($time, $reference);
@@ -125,6 +125,15 @@ class PeriodX
 			return $difference;
 		}
 		return false;
+	}
+
+
+
+	// ◈ === fulldate » human readable → string
+	public static function fulldate($datetime)
+	{
+		$time = date('F j, Y g:i A', strtotime($datetime));
+		return $time;
 	}
 
 }//> end of PeriodX n
