@@ -24,12 +24,38 @@ class VarX
 
 
 
-
-
 	// ◈ === safe »
 	public static function safe(&$var = null, $default = '')
 	{
 		return isset($var) ? $var : $default;
+	}
+
+
+
+	// • ==== setIfNot → ... » boolean
+	public static function setIfNot(&$var, $value)
+	{
+		if (!self::is($var)) {
+			$var = $value;
+			return true;
+		}
+		return false;
+	}
+
+
+
+	// • ==== setIf → ... » boolean | value
+	public static function setIf($var, &$check, $value = null)
+	{
+		if (self::is($check)) {
+			if (is_null($value)) {
+				$var = $check;
+			} else {
+				$var = $value;
+			}
+			return $var;
+		}
+		return null;
 	}
 
 }//> end of class ~ VarX
