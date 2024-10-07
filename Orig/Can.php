@@ -4,6 +4,33 @@ namespace App\Yaic\Orig;
 
 class Can
 {
+	// ◈ === is »
+	public static function is(&$var = null, $comparison = null, $strictCheck = false)
+	{
+		if (is_null($var)) {
+			return false;
+		}
+
+		if (is_null($comparison)) {
+			if ($var === 0) {
+				return true;
+			}
+			if (!empty($var)) {
+				return true;
+			}
+		} else {
+			if ($strictCheck) {
+				return $var === $comparison;
+			} else {
+				return $var == $comparison;
+			}
+		}
+
+		return false;
+	}
+
+
+
 	// ◈ === iterate »
 	public static function iterate(&$var): bool
 	{
@@ -29,6 +56,34 @@ class Can
 		}
 
 		return false;
+	}
+
+
+
+	// ◈ === setIfNot »
+	public static function setIfNot(&$var, $value)
+	{
+		if (!self::is($var)) {
+			$var = $value;
+			return true;
+		}
+		return false;
+	}
+
+
+
+	// ◈ === setIf »
+	public static function setIf($var, &$check, $value = null)
+	{
+		if (self::is($check)) {
+			if (is_null($value)) {
+				$var = $check;
+			} else {
+				$var = $value;
+			}
+			return $var;
+		}
+		return null;
 	}
 
 }//> end of class ~ Can
