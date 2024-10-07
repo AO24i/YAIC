@@ -2,6 +2,8 @@
 
 namespace App\Yaic\Tydi\Http;
 
+use Illuminate\Support\Facades\Http;
+
 class HttpX
 {
 
