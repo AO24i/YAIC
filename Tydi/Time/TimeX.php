@@ -4,7 +4,7 @@ namespace App\Yaic\Tydi\Time;
 
 class TimeX
 {
-	// ◈ ==== isString → ... » boolean
+	// ◈ === isString → ... » boolean
 	public static function isString($string)
 	{
 		$timestamp = strtotime($string);
@@ -13,7 +13,7 @@ class TimeX
 
 
 
-	// ◈ ==== isTimestamp → ... » boolean
+	// ◈ === isTimestamp → ... » boolean
 	public static function isTimestamp($timestamp)
 	{
 		$dateTime = \DateTime::createFromFormat('U', $timestamp);
@@ -28,7 +28,7 @@ class TimeX
 
 
 
-	// ◈ ==== timestamp → ... » timestamp|null
+	// ◈ === timestamp → ... » timestamp|null
 	public static function timestamp($time = null)
 	{
 		$time = $time ?? now();
@@ -43,7 +43,7 @@ class TimeX
 
 
 
-	// ◈ ==== isPast → ... » boolean
+	// ◈ === isPast → ... » boolean
 	public static function isPast($time, $due = null)
 	{
 		$time = Carbon::parse($time);
@@ -63,7 +63,7 @@ class TimeX
 
 
 
-	// ◈ ==== isFuture → ... » boolean
+	// ◈ === isFuture → ... » boolean
 	public static function isFuture($time, $due = null)
 	{
 		$time = Carbon::parse($time);
@@ -85,13 +85,10 @@ class TimeX
 	public static function isDue($time, $due = null)
 	{
 	}
-	public static function isDuex($time, $due = null)
-	{
-	}
 
 
 
-	// ◈ ==== human → human readable » string
+	// ◈ === human → human readable » string
 	public static function human($time)
 	{
 		$timestamp = self::isString($time);
@@ -103,7 +100,7 @@ class TimeX
 
 
 
-	// ◈ ==== dateHTML → ... »
+	// ◈ === dateHTML → ... »
 	public static function dateHTML($timestamp = null)
 	{
 		$timestamp = $timestamp ?? now();
